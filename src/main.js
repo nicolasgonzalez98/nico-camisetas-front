@@ -2,7 +2,7 @@ import { createApp ,markRaw} from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
-import router from "./router/index.js";
+//import router from "./router/index.js";
 
 
 import PrimeVue from 'primevue/config';
@@ -15,18 +15,19 @@ import DialogService from 'primevue/dialogservice';
 import Button from "primevue/button";
 import Dropdown from "primevue/dropdown";
 
-import vue3GoogleLogin from 'vue3-google-login'
+//import vue3GoogleLogin from 'vue3-google-login'
 // import GSignInButton from 'vue-google-signin-button'
 
-import "primevue/resources/themes/lara-light-indigo/theme.css";
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
+// import 'primevue/resources/themes/lara-light-indigo/theme.css';
+// import 'primevue/resources/primevue.min.css';
+// import 'primeicons/primeicons.css';
+
 
 // import '@gcba/obelisco'
 
 import Tooltip from 'primevue/tooltip';
 //core
-import "primevue/resources/primevue.min.css";
+//import "primevue/resources/primevue.min.css";
 
 //theme
 
@@ -34,22 +35,22 @@ const pinia = createPinia()
 
 const client_id = import.meta.env.VITE_GOOGLE_CLIENT_ID
 
-pinia.use(({store}) =>{
-    store.router = markRaw(router)
-})
+// pinia.use(({store}) =>{
+//     store.router = markRaw(router)
+// })
 pinia.use(piniaPluginPersistedstate )
 
 const app = createApp(App)
 
 app.use(pinia)
-    .use(router)
+    //.use(router)
     .use(ToastService)
     .use(ConfirmationService)
     .use(BadgeDirective)
     .use(DialogService)
-    .use(vue3GoogleLogin,{
-        clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID
-    })
+    // .use(vue3GoogleLogin,{
+    //     clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID
+    // })
     .use(PrimeVue,
         {
             locale: {
