@@ -1,5 +1,5 @@
 import axios from 'axios'
-import  {userAuthStore} from "./Modules/Auth/store/auth.js";
+import { userAuthStore } from "./stores/authStore";
 import {computed} from "vue";
 
 axios.defaults.withCredentials = true

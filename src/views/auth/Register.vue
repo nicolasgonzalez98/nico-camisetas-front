@@ -1,6 +1,7 @@
 <script setup>
   import { reactive } from 'vue';
   import { useRouter } from 'vue-router';
+  import {userAuthStore} from '../../stores/authStore'
 
   import InputText from 'primevue/inputtext';
   import Password from 'primevue/password';
@@ -9,6 +10,7 @@
 
   // Store y router
   const router = useRouter();
+  const authStore = userAuthStore()
 
   // Formulario reactivo
   const form = reactive({
@@ -20,9 +22,10 @@
 
   // Función de registro
   const register = async () => {
+    console.log("Llegue")
     try {
       await authStore.register(form);
-      router.push('/dashboard'); // Redirige tras el registro
+      router.push('/login'); // Redirige tras el registro
     } catch (error) {
       console.error('Error en el registro:', error);
     }

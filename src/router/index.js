@@ -1,26 +1,15 @@
 import {createRouter, createWebHistory} from "vue-router";
-//import routesAuth from './authRouter.js'
-import Register from "@/views/auth/Register.vue";
+import routesAuth from './authRouter.js'
+import routesShop from './shopRouter.js'
 
 var allRoutes = []
 
-//const routes = allRoutes.concat(routesAuth)
+const routes = allRoutes.concat(routesAuth, routesShop)
 
-const routes = [
-    {
-        path: '/',
-        component: Register // Página principal
-    },
-    {
-        path: '/register',
-        component: Register // Ruta de registro
-    }
-];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
-
 })
 
 export default router;

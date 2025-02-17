@@ -1,3 +1,4 @@
+import LogIn from "@/views/auth/LogIn.vue";
 import Register from "@/views/auth/Register.vue";
 //import LogIn from "../views/auth/LogIn.vue";
 
@@ -15,8 +16,8 @@ export default [
         component: Register
     },
     {
-        path: "/",
+        path: "/login",
         name: "Register",
-        component: Register
+        component: LogIn
     }
 ];
